@@ -1,3 +1,7 @@
+#titlebar {
+    --tab-collapsed-width: 44px !important;
+}
+
 @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.hide_workspace_indicator") {
     #zen-current-workspace-indicator {
         display: none !important;
@@ -22,7 +26,6 @@
 
 #TabsToolbar {
     padding-top: var(--zen-element-separation) !important;
-    --tab-collapsed-width: 44px !important;
     width: var(--tab-collapsed-width) !important;
     transition: 120ms width cubic-bezier(.24, -0.01, .58, 1) !important;
     overflow: clip;
