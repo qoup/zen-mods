@@ -20,7 +20,7 @@
     margin: 0 !important;
 }
 
-.tab-label-container {
+.tab-label-container, .tab-close-button {
     display: inline-block !important;
 }
 
