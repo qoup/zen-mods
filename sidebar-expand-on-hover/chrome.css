@@ -84,6 +84,7 @@
 
 #zen-workspaces-button {
     flex-direction: row !important;
+    justify-content: space-around !important
 }
 
 @media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.collapse_buttons") {
@@ -103,6 +104,10 @@
 
         #zen-workspaces-button {
             gap: 0 !important;
+            justify-content: center !important;
+            toolbarbutton {
+                margin: 0 !important;
+            }
 
             &:not([as-button="true"]) {
                 & toolbarbutton {
