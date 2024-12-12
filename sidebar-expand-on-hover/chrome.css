@@ -97,7 +97,7 @@
         height: calc(100% + var(--zen-element-separation));
         top: calc(0px - var(--zen-element-separation));
         opacity: 0.0;
-        transition: 60ms opacity ease-in 60ms;
+        transition: 60ms opacity ease-in calc(var(--theme-sidebar_expand_on_hover-transition_speed) - 60ms);
         z-index: -1;
         background: var(--zen-main-browser-background-toolbar) !important;
         background-attachment: fixed !important;
