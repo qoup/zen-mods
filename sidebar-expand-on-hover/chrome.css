@@ -143,6 +143,7 @@
         display: flex !important;
         padding: 0 var(--tab-inline-padding) !important;
         justify-content: start !important;
+        gap: var(--tab-inline-padding) !important;
 
         .toolbarbutton-icon {
             background: transparent !important;
@@ -156,6 +157,7 @@
             background: transparent !important;
             max-width: var(--theme-sidebar_expand_on_hover-expanded_width) !important;
             transition: max-width, padding var(--theme-sidebar_expand_on_hover-transition_speed) ease-in-out;
+            padding: 0 !important;
         }
     }
 }
