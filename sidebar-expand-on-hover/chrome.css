@@ -45,14 +45,17 @@
                   }
               }
 
-              @media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.default_tab_background_shape") {
-                  .tab-content {
-                      min-width: unset !important;
-                  }
-              }
-          }
-      }
-  }
+            @media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.default_tab_background_shape") {
+                .tab-content {
+                    min-width: unset !important;
+                }
+            }
+        }
+
+        border-radius: 8px !important;
+        overflow: hidden !important;
+    }
+}
 
   #zen-essentials-container {
       width: var(--theme-sidebar_expand_on_hover-expanded_width) !important;
@@ -65,13 +68,15 @@
       }
   }
 
-  #TabsToolbar {
-      padding-top: var(--zen-element-separation) !important;
-      width: var(--tab-collapsed-width) !important;
-      transition: 120ms width cubic-bezier(.24, -0.01, .58, 1) !important;
-      overflow: clip;
-      position: relative;
-  }
+#TabsToolbar {
+    padding-top: var(--zen-element-separation) !important;
+    width: var(--tab-collapsed-width) !important;
+    transition: var(--theme-sidebar_expand_on_hover-transition_speed) width cubic-bezier(.24, -0.01, .58, 1) !important;
+    overflow: clip;
+    position: relative;
+    border-radius: 8px !important; /* Ensure rounded corners */
+    overflow: hidden !important; /* Ensure child elements don't overflow */
+}
 
   #vertical-pinned-tabs-container:has(tab:not([hidden])) {
       & .tabbrowser-tab {
@@ -84,50 +89,52 @@
       width: var(--tab-collapsed-width) !important;
   }
 
-  @media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.custom_background") {
-      #TabsToolbar::before {
-          position: absolute;
-          content: "";
-          width: 100%;
-          height: calc(100% + var(--zen-element-separation));
-          top: calc(0px - var(--zen-element-separation));
-          opacity: 0.0;
-          transition: 60ms opacity ease-in 60ms;
-          z-index: -1;
-          background: var(--zen-main-browser-background-toolbar) !important;
-          background-attachment: fixed !important;
-          background-size: 2000px !important;
-          backdrop-filter: blur(5px) !important;
-      }
+@media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.custom_background") {
+    #TabsToolbar::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: calc(100% + var(--zen-element-separation));
+        top: calc(0px - var(--zen-element-separation));
+        opacity: 0.0;
+        transition: 60ms opacity ease-in 60ms;
+        z-index: -1;
+        background: var(--zen-main-browser-background-toolbar) !important;
+        background-attachment: fixed !important;
+        background-size: 2000px !important;
+        backdrop-filter: blur(5px) !important;
+        border-top-right-radius: 8px !important;
+        border-bottom-right-radius: 8px !important;
+    }
 
-      #TabsToolbar:hover::before {
-          opacity: 1.0 !important;
-          ;
-          transition: 60ms opacity ease-out;
-      }
-  }
+    #TabsToolbar:hover::before {
+        opacity: 1.0 !important;
+        transition: 60ms opacity ease-out;
+    }
+}
 
-  #TabsToolbar:hover {
-      width: var(--theme-sidebar_expand_on_hover-expanded_width) !important;
-      box-shadow: 1px -1px black;
-  }
+#TabsToolbar:hover {
+    width: var(--theme-sidebar_expand_on_hover-expanded_width) !important;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+}
 
-  .tab-background {
-      width: calc(100% - 4px) !important;
-  }
+.tab-background {
+    border-top-right-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+    width: calc(100% - 4px) !important;
+}
 
-  #zen-sidebar-icons-wrapper {
-      justify-content: space-evenly !important;
-      display: flex;
-      flex-direction: row !important;
-      transition: gap 120ms ease-in-out !important;
-  }
+#zen-sidebar-icons-wrapper {
+    justify-content: space-evenly !important;
+    display: flex;
+    flex-direction: row !important;
+    transition: gap var(--theme-sidebar_expand_on_hover-transition_speed) ease-in-out !important;
+}
 
   #zen-workspaces-button {
       flex-direction: row !important;
-      justify-content: space-around !important
+      justify-content: space-around !important;
   }
-
   @media (-moz-bool-pref: 'zen.tabs.show-newtab-vertical') {
       #tabs-newtab-button {
           width: 100% !important;
@@ -147,28 +154,26 @@
               display: flex !important;
               background: transparent !important;
               max-width: var(--theme-sidebar_expand_on_hover-expanded_width) !important;
-              transition: max-width, padding 120ms ease-in-out;
+              transition: max-width, padding var(--theme-sidebar_expand_on_hover-transition_speed) ease-in-out;
           }
       }
   }
 
-  #TabsToolbar:not(#TabsToolbar:hover) {
-      #tabs-newtab-button {
+#TabsToolbar:not(#TabsToolbar:hover) {
+    #tabs-newtab-button {
+        .toolbarbutton-text {
+            max-width: 0 !important;
+            padding: 0 !important;
+        }
+    }
+}
 
-          .toolbarbutton-text {
-              max-width: 0 !important;
-              padding: 0 !important;
-          }
-      }
-  }
-
-  @media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.collapse_buttons") {
-      #zen-sidebar-icons-wrapper {
-          justify-content: start !important;
-          padding-left: calc((var(--tab-collapsed-width) - 36px) / 2) !important;
-          ;
-      }
-  }
+@media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.collapse_buttons") {
+    #zen-sidebar-icons-wrapper {
+        justify-content: start !important;
+        padding-left: calc((var(--tab-collapsed-width) - 36px) / 2) !important;
+    }
+}
 
   @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.collapse_buttons") {
       #TabsToolbar:not(#TabsToolbar:hover) {
@@ -217,19 +222,19 @@
               }
           }
 
-          &:not([as-button="true"]) {
-              & toolbarbutton {
-                  &:not([active="true"]) {
-                      transition: width 120ms ease-in-out !important;
-                      overflow: hidden;
-                  }
-              }
-          }
-      }
+        &:not([as-button="true"]) {
+            & toolbarbutton {
+                &:not([active="true"]) {
+                    transition: width var(--theme-sidebar_expand_on_hover-transition_speed) ease-in-out !important;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
 
-      #zen-sidebar-icons-wrapper> :not(#zen-workspaces-button) {
-          transition: width 120ms ease-in-out !important;
-          width: 42px;
-          overflow: hidden !important;
-      }
-  }
+    #zen-sidebar-icons-wrapper> :not(#zen-workspaces-button) {
+        transition: width var(--theme-sidebar_expand_on_hover-transition_speed) ease-in-out !important;
+        width: 42px;
+        overflow: hidden !important;
+    }
+}
