@@ -155,18 +155,11 @@
         .toolbarbutton-text {
             display: flex !important;
             background: transparent !important;
-            max-width: var(--theme-sidebar_expand_on_hover-expanded_width) !important;
-            transition: max-width, padding var(--theme-sidebar_expand_on_hover-transition_speed) ease-in-out;
             padding: 0 !important;
         }
-    }
-}
-
-#TabsToolbar:not(#TabsToolbar:hover) {
-    #tabs-newtab-button {
-        .toolbarbutton-text {
-            max-width: 0 !important;
-            padding: 0 !important;
+        
+        .toolbarbutton-text:before {
+            text-overflow: clip !important;
         }
     }
 }
