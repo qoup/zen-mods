@@ -2,27 +2,67 @@
     --tab-collapsed-width: 44px !important;
 }
 
+#tabbrowser-tabs {
+    & .tabbrowser-tab {
+        &[pinned] .tab-close-button {
+            display: none !important;
+        }
+
+        &[pinned]:not([zen-essential]):hover .tab-reset-button,
+        &[pinned][visuallyselected]:not([zen-essential]) .tab-reset-button {
+            display: block !important;
+        }
+
+        &:not([pinned]):hover .tab-close-button,
+        &[visuallyselected]:not([pinned]) .tab-close-button {
+            display: block !important;
+        }
+
+        &[zen-essential] {
+            margin: 0 !important;
+            --tab-min-height: 44px;
+        }
+
+        &:not([zen-essential]) {
+            width: 100% !important;
+            margin: 0 !important;
+
+            .tab-content {
+                justify-content: space-between !important;
+                padding: 0 var(--tab-inline-padding) !important;
+                gap: var(--tab-inline-padding);
+                width: 100% !important;
+                align-items: center !important;
+            }
+
+            .tab-label-container {
+                display: inline-block !important;
+            }
+
+            @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.default_tab_background_shape") {
+                .tab-content {
+                    min-width: 0 !important;
+                }
+            }
+
+            @media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.default_tab_background_shape") {
+                .tab-content {
+                    min-width: unset !important;
+                }
+            }
+        }
+    }
+}
+
+#zen-essentials-container {
+    width: var(--theme-sidebar_expand_on_hover-expanded_width) !important;
+    justify-content: unset !important;
+}
+
 @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.hide_workspace_indicator") {
     #zen-current-workspace-indicator {
         display: none !important;
     }
-}
-
-.tab-content {
-    justify-content: space-between !important;
-    padding: 0 var(--tab-inline-padding) !important;
-    gap: var(--tab-inline-padding);
-    width: 100% !important;
-}
-
-.tabbrowser-tab {
-    width: 100% !important;
-    margin: 0 !important;
-}
-
-.tab-label-container,
-.tab-close-button {
-    display: inline-block !important;
 }
 
 #TabsToolbar {
