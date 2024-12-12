@@ -20,7 +20,8 @@
     margin: 0 !important;
 }
 
-.tab-label-container, .tab-close-button {
+.tab-label-container,
+.tab-close-button {
     display: inline-block !important;
 }
 
@@ -87,6 +88,39 @@
     justify-content: space-around !important
 }
 
+
+#tabs-newtab-button {
+    width: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    padding: 0 var(--tab-inline-padding) !important;
+    justify-content: start !important;
+
+    .toolbarbutton-icon {
+        background: transparent !important;
+        padding: 0 !important;
+        height: 16px !important;
+        width: 16px !important;
+    }
+
+    .toolbarbutton-text {
+        display: flex !important;
+        background: transparent !important;
+        max-width: var(--theme-sidebar_expand_on_hover-expanded_width) !important;
+        transition: max-width, padding 120ms ease-in-out;
+    }
+}
+
+#TabsToolbar:not(#TabsToolbar:hover) {
+    #tabs-newtab-button {
+
+        .toolbarbutton-text {
+            max-width: 0 !important;
+            padding: 0 !important;
+        }
+    }
+}
+
 @media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.collapse_buttons") {
     #zen-sidebar-icons-wrapper {
         justify-content: start !important;
@@ -105,6 +139,7 @@
         #zen-workspaces-button {
             gap: 0 !important;
             justify-content: center !important;
+
             toolbarbutton {
                 margin: 0 !important;
             }
