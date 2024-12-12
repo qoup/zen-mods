@@ -28,5 +28,11 @@
       "label": "Width of the expanded sidebar",
       "type": "string",
       "defaultValue": "300px"
+    },
+    {
+      "property": "theme.sidebar_expand_on_hover.transition_speed",
+      "label": "Transition speed of the sidebar",
+      "type": "string",
+      "defaultValue": "120ms"
     }
   ]
