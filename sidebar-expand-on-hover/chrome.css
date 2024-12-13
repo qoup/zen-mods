@@ -38,22 +38,26 @@
             .tab-label-container {
                 display: inline-block !important;
             }
-
-            @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.default_tab_background_shape") {
-                .tab-content {
-                    min-width: 0 !important;
-                }
+            
+            .tab-content {
+                min-width: 0 !important;
             }
 
             @media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.default_tab_background_shape") {
-                .tab-content {
-                    min-width: unset !important;
+                .tab-background {
+                    width: 100% !important;
+                    transform: translateX(2px) !important;
+                    border-radius: var(--border-radius-medium) 0 0 var(--border-radius-medium) !important;
                 }
             }
         }
 
         border-radius: 8px !important;
         overflow: hidden !important;
+        
+        @media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.default_tab_background_shape") {
+            border-radius: 0 !important;
+        }
     }
 }
 
