@@ -1,5 +1,9 @@
 /* only use mod in collapsed toolbar mode */
 :root:has(#navigator-toolbox:not([zen-sidebar-expanded="true"])) {
+    #navigator-toolbox {
+        z-index: 3 !important;
+    }
+    
     #titlebar {
         --tab-collapsed-width: 44px !important;
     }
