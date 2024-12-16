@@ -1,8 +1,7 @@
 /* only use mod in collapsed toolbar mode */
 :root:has(#navigator-toolbox:not([zen-sidebar-expanded="true"])) {
-    #browser {
-        --tab-collapsed-width: 44px !important;
-    }
+    --zen-toolbox-max-width: 44px !important; /* Width of the collapsed sidebar */
+    --tab-collapsed-width: var(--zen-toolbox-max-width) !important; /* For automatic tab icon centering? */
     
     #navigator-toolbox {
         z-index: 4 !important;
@@ -15,7 +14,7 @@
             overflow: visible !important;
 
             #zen-appcontent-navbar-container {
-                margin-left: calc(0px - var(--tab-collapsed-width)) !important;
+                margin-left: calc(0px - var(--zen-toolbox-max-width)) !important;
 
                 #nav-bar-customization-target > toolbarbutton:first-child {
                     padding-inline-start: var(--toolbarbutton-outer-padding) !important;
@@ -110,7 +109,7 @@
     }
 
     #titlebar {
-        width: var(--tab-collapsed-width) !important;
+        width: var(--zen-toolbox-max-width) !important;
         transition: var(--theme-sidebar_expand_on_hover-transition_speed) width cubic-bezier(.24, -0.01, .58, 1) !important;
         overflow: clip;
         position: relative;
@@ -193,7 +192,7 @@
     }
 
     #zen-sidebar-top-buttons {
-        width: var(--tab-collapsed-width);
+        width: var(--zen-toolbox-max-width);
         transition: width var(--theme-sidebar_expand_on_hover-transition_speed) ease-in-out !important;
     }
 
