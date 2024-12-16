@@ -194,6 +194,11 @@
     #zen-sidebar-top-buttons {
         width: var(--zen-toolbox-max-width);
         transition: width var(--theme-sidebar_expand_on_hover-transition_speed) ease-in-out !important;
+        min-height: unset !important;
+
+        #zen-sidebar-top-buttons-customization-target:not(:has(*)) {
+            padding: 0 !important;
+        }
     }
 
     #zen-sidebar-icons-wrapper,
