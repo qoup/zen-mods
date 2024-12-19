@@ -1,3 +1,10 @@
+:root:has(#customization-container) {
+    /* Show flexible space in customiation mode in top buttons, since this mod allows them there */
+    #zen-sidebar-top-buttons-customization-target toolbarspring {
+        display: flex !important;
+    }
+}
+
 /* only use mod in collapsed toolbar mode */
 :root:has(#navigator-toolbox:not([zen-sidebar-expanded="true"])) {
     --zen-toolbox-max-width: 44px !important; /* Width of the collapsed sidebar */
@@ -206,13 +213,19 @@
         flex-direction: row !important;
         gap: 0 !important;
         
-        toolbarbutton {
+        & > * {
             overflow: hidden !important;
             padding: 0 !important;
             width: 36px !important;
             height: 36px !important;
-            flex: auto !important;
-            transition: flex var(--theme-sidebar_expand_on_hover-transition_speed), width var(--theme-sidebar_expand_on_hover-transition_speed) linear !important;
+            flex-grow: 1 !important;
+            transition: flex-grow var(--theme-sidebar_expand_on_hover-transition_speed), width var(--theme-sidebar_expand_on_hover-transition_speed), margin-inline var(--theme-sidebar_expand_on_hover-transition_speed) linear !important;
+            margin-inline: 2px !important;
+        }
+        
+        toolbarspring {
+            flex-grow: 100 !important;
+            display: flex !important;
         }
     }
 
@@ -225,8 +238,9 @@
         
         toolbarbutton {
             margin: 0 !important;
-            flex: auto !important;
-            transition: flex var(--theme-sidebar_expand_on_hover-transition_speed), width var(--theme-sidebar_expand_on_hover-transition_speed) linear !important;
+            flex-grow: 1 !important;
+            transition: flex-grow var(--theme-sidebar_expand_on_hover-transition_speed), width var(--theme-sidebar_expand_on_hover-transition_speed), margin-inline var(--theme-sidebar_expand_on_hover-transition_speed) linear !important;
+            margin-inline: 2px !important;
             overflow: hidden !important;
         }
     }
@@ -234,29 +248,33 @@
     #navigator-toolbox:not([zen-has-hover]) #titlebar:not(#titlebar:hover) {
         #zen-workspaces-button {
             toolbarbutton:not([active="true"]) {
-                flex: 0 !important;
+                flex-grow: 0 !important;
                 width: 0 !important;
+                margin-inline: 0 !important;
             }
         }
 
         @media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.collapse_buttons") {
             #zen-sidebar-icons-wrapper > toolbarbutton:not(:first-child),
             #zen-sidebar-top-buttons-customization-target > toolbarbutton:not(:first-child) {
-                flex: 0 !important;
+                flex-grow: 0 !important;
                 width: 0 !important;
                 min-width: 0 !important;
+                margin-inline: 0 !important;
             }
         }
 
         @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.collapse_buttons") {
             /* Show first child only when no visible workspace switcher */
-            #zen-sidebar-icons-wrapper:not(:has(#zen-workspaces-button:not([dont-show="true"]))) > toolbarbutton:not(:first-child),
-            #zen-sidebar-top-buttons-customization-target:not(:has(#zen-workspaces-button:not([dont-show="true"]))) > toolbarbutton:not(:first-child),
+            #zen-sidebar-icons-wrapper:not(:has(#zen-workspaces-button:not([dont-show="true"]))) > *:not(:first-child),
+            #zen-sidebar-top-buttons-customization-target:not(:has(#zen-workspaces-button:not([dont-show="true"]))) > *:not(:first-child),
             /* Show active workspace only when visible workspace switcher */
-            #zen-sidebar-icons-wrapper:has(#zen-workspaces-button:not([dont-show="true"])) > toolbarbutton:not(#zen-workspaces-button),
-            #zen-sidebar-top-buttons-customization-target:has(#zen-workspaces-button:not([dont-show="true"])) > toolbarbutton:not(#zen-workspaces-button) {
-                flex: 0 !important;
+            #zen-sidebar-icons-wrapper:has(#zen-workspaces-button:not([dont-show="true"])) > *:not(#zen-workspaces-button),
+            #zen-sidebar-top-buttons-customization-target:has(#zen-workspaces-button:not([dont-show="true"])) > *:not(#zen-workspaces-button) {
+                flex-grow: 0 !important;
                 width: 0 !important;
+                min-width: 0 !important;
+                margin-inline: 0 !important;
             }
         }
     }
