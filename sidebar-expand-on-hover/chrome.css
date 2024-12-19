@@ -158,10 +158,6 @@
     #navigator-toolbox[zen-has-hover] #titlebar {
         width: var(--theme-sidebar_expand_on_hover-expanded_width) !important;
         box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
-
-        #zen-sidebar-top-buttons {
-            width: var(--theme-sidebar_expand_on_hover-expanded_width);
-        }
     }
 
     .tab-background {
@@ -197,8 +193,7 @@
     }
 
     #zen-sidebar-top-buttons {
-        width: var(--zen-toolbox-max-width);
-        transition: width var(--theme-sidebar_expand_on_hover-transition_speed) ease-in-out !important;
+        width: 100% !important;
         min-height: unset !important;
 
         #zen-sidebar-top-buttons-customization-target:not(:has(*)) {
