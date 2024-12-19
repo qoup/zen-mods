@@ -249,10 +249,12 @@
         }
 
         @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.collapse_buttons") {
-            #zen-sidebar-icons-wrapper:not(:has(#zen-workspaces-button)) > toolbarbutton:not(:first-child),
-            #zen-sidebar-top-buttons-customization-target:not(:has(#zen-workspaces-button)) > toolbarbutton:not(:first-child),
-            #zen-sidebar-icons-wrapper:has(#zen-workspaces-button) > toolbarbutton:not(#zen-workspaces-button),
-            #zen-sidebar-top-buttons-customization-target:has(#zen-workspaces-button) > toolbarbutton:not(#zen-workspaces-button) {
+            /* Show first child only when no visible workspace switcher */
+            #zen-sidebar-icons-wrapper:not(:has(#zen-workspaces-button:not([dont-show="true"]))) > toolbarbutton:not(:first-child),
+            #zen-sidebar-top-buttons-customization-target:not(:has(#zen-workspaces-button:not([dont-show="true"]))) > toolbarbutton:not(:first-child),
+            /* Show active workspace only when visible workspace switcher */
+            #zen-sidebar-icons-wrapper:has(#zen-workspaces-button:not([dont-show="true"])) > toolbarbutton:not(#zen-workspaces-button),
+            #zen-sidebar-top-buttons-customization-target:has(#zen-workspaces-button:not([dont-show="true"])) > toolbarbutton:not(#zen-workspaces-button) {
                 flex: 0 !important;
                 width: 0 !important;
             }
