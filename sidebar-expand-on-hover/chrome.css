@@ -158,8 +158,6 @@
     }
 
     .tab-background {
-        border-top-right-radius: 8px !important;
-        border-bottom-right-radius: 8px !important;
         width: calc(100% - 4px) !important;
     }
 
