@@ -24,6 +24,12 @@
       "defaultValue": true
     },
     {
+      "property": "theme.sidebar_expand_on_hover.inverted_tabs",
+      "label": "Inverted Tab Direction",
+      "type": "checkbox",
+      "defaultValue": false
+    },
+    {
       "property": "theme.sidebar_expand_on_hover.expanded_width",
       "label": "Width of the expanded sidebar",
       "type": "string",

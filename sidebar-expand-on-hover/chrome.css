@@ -17,14 +17,16 @@
     
     /* Move topbar buttons in the now empty space */
     @media not (-moz-bool-pref: "zen.view.compact") {
-        #zen-appcontent-wrapper {
-            overflow: visible !important;
+        #browser:has(#navigator-toolbox:not([zen-right-side="true"])) {
+            #zen-appcontent-wrapper {
+                overflow: visible !important;
 
-            #zen-appcontent-navbar-container {
-                margin-left: calc(0px - var(--zen-toolbox-max-width)) !important;
+                #zen-appcontent-navbar-container {
+                    margin-left: calc(0px - var(--zen-toolbox-max-width)) !important;
 
-                #nav-bar-customization-target > toolbarbutton:first-child {
-                    padding-inline-start: var(--toolbarbutton-outer-padding) !important;
+                    #nav-bar-customization-target > toolbarbutton:first-child {
+                        padding-inline-start: var(--toolbarbutton-outer-padding) !important;
+                    }
                 }
             }
         }
@@ -128,6 +130,20 @@
         position: relative;
         border-radius: 8px !important; /* Ensure rounded corners */
         overflow: hidden !important; /* Ensure child elements don't overflow */
+    }
+    
+    #navigator-toolbox[zen-right-side="true"] {
+        direction: rtl !important;
+        
+        #titlebar {
+            direction: ltr !important;
+        }
+    }
+    
+    @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.inverted_tabs") {
+        .tabbrowser-tab {
+            direction: rtl !important;
+        }
     }
 
     #vertical-pinned-tabs-container:has(tab:not([hidden])) {
