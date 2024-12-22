@@ -30,8 +30,9 @@
         }
     }
 
-    @media not (-moz-bool-pref: "zen.view.compact.hide-tabbar"),
+    @media not (-moz-bool-pref: "zen.view.compact.hide-toolbar"),
     (not (-moz-bool-pref: "zen.view.compact")) {
+        
         #navigator-toolbox {
             margin-top: var(--zen-toolbar-height) !important;
         }
@@ -39,6 +40,11 @@
         #browser:has(#PersonalToolbar[collapsed=false]) #navigator-toolbox {
             margin-top: calc(var(--zen-toolbar-height) + 2.2em) !important;
         }
+    }
+    
+    /* In compact mode (with topbar hidden) the topbar should be above the sidebar when hovered, while the sidebar should be above the page, doesn't work well with transitions but z-index is weird :c */
+    #browser:has(#zen-appcontent-navbar-container[zen-has-hover]) #navigator-toolbox {
+        z-index: 3 !important;
     }
 
     #PersonalToolbar[collapsed=false] {
