@@ -170,6 +170,7 @@
         }
 
         #titlebar:hover::before,
+        #titlebar:has(toolbarbutton[open="true"]:not(#zen-sidepanel-button))::before,
         #navigator-toolbox[zen-has-hover] #titlebar::before {
             opacity: 1.0 !important;
             transition: 60ms opacity ease-out;
@@ -177,6 +178,7 @@
     }
 
     #titlebar:hover,
+    #titlebar:has(toolbarbutton[open="true"]:not(#zen-sidepanel-button)),
     #navigator-toolbox[zen-has-hover] #titlebar {
         width: var(--theme-sidebar_expand_on_hover-expanded_width) !important;
         box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
@@ -262,7 +264,7 @@
         }
     }
 
-    #navigator-toolbox:not([zen-has-hover]) #titlebar:not(#titlebar:hover) {
+    #navigator-toolbox:not([zen-has-hover]) #titlebar:not(#titlebar:hover, #titlebar:has(toolbarbutton[open="true"]:not(#zen-sidepanel-button))) {
         #zen-workspaces-button {
             toolbarbutton:not([active="true"]) {
                 flex-grow: 0 !important;
