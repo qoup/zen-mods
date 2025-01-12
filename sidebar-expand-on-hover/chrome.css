@@ -171,7 +171,9 @@
 
         #titlebar:hover::before,
         #titlebar:has(toolbarbutton[open="true"]:not(#zen-sidepanel-button))::before,
-        #navigator-toolbox[zen-has-hover] #titlebar::before {
+        #navigator-toolbox[zen-has-hover] #titlebar::before,
+        #navigator-toolbox[has-popup-menu] #titlebar::before,
+        #navigator-toolbox[movingtab] #titlebar::before {
             opacity: 1.0 !important;
             transition: 60ms opacity ease-out;
         }
