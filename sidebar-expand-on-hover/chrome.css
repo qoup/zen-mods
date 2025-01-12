@@ -236,7 +236,7 @@
         flex-direction: row !important;
         gap: 0 !important;
         
-        & > * {
+        & > :not(panel) {
             overflow: hidden !important;
             padding: 0 !important;
             width: 36px !important;
