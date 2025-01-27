@@ -24,7 +24,7 @@
             #zen-appcontent-wrapper {
                 overflow: visible !important;
 
-                #zen-appcontent-navbar-container {
+                #zen-appcontent-navbar-container:has(#nav-bar>.titlebar-buttonbox-container:last-child) {
                     margin-left: calc(0px - var(--zen-toolbox-max-width)) !important;
 
                     #nav-bar-customization-target>toolbarbutton:first-child {
