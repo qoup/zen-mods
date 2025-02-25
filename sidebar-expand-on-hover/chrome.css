@@ -326,4 +326,15 @@
     #navigator-toolbox:not([zen-has-hover], [has-popup-menu], [movingtab]) #zen-sidebar-bottom-buttons {
         flex-direction: column !important;
     }
+    .zen-workspace-tabs-section {
+        display: flex;
+        flex-direction: column;
+        max-width: 100% !important;
+        overflow: hidden;
+      }
+    #tabbrowser-tabs[orient="vertical"] {
+        overflow: hidden;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
 }
