@@ -133,6 +133,9 @@
         .zen-current-workspace-indicator {
             display: none !important;
         }
+        hbox#zen-sidebar-top-buttons-customization-target {
+          display: none !important;
+        }
     }
 
     #titlebar {
