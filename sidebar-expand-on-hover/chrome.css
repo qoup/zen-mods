@@ -56,8 +56,15 @@
     }
 
     /* In compact mode (with topbar hidden) the topbar should be above the sidebar when hovered, while the sidebar should be above the page, doesn't work well with transitions but z-index is weird :c */
-    #browser:has(#zen-appcontent-navbar-container[zen-has-hover]) #navigator-toolbox {
-        z-index: 3 !important;
+    #browser:has(#zen-appcontent-navbar-wrapper[zen-has-hover]) {
+      #zen-appcontent-navbar-wrapper, #zen-appcontent-navbar-container, toolbar.browser-toolbar {
+        z-index: 23 !important;
+      }
+      #navigator-toolbox {
+        z-index: 0 !important;
+      }
+
+
     }
 
     #PersonalToolbar[collapsed=false] {
