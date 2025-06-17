@@ -38,6 +38,31 @@
 
 /* only use mod in collapsed toolbar mode */
 :root:has(#navigator-toolbox:not([zen-sidebar-expanded="true"])) {
+  @media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.bottembuttons_display") {
+    #zen-sidebar-foot-buttons {
+      display: flex !important;
+      padding-left: 0px !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      flex-direction: column !important;
+    }
+    #browser:has([zen-has-hover="true"]) #zen-sidebar-foot-buttons {
+      flex-direction: row !important;
+    }
+    #zen-sidebar-foot-buttons > * {
+      flex-grow: 1 !important;
+    }
+  }
+  @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.bottembuttons_display") {
+    #zen-sidebar-foot-buttons {
+      align-items: start !important;
+    }
+    @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.inverted_tabs") {
+      #zen-sidebar-foot-buttons {
+        align-items: end !important;
+      }
+    }
+  }
   /* Width of the collapsed sidebar */
   --zen-toolbox-max-width: 44px !important;
   /* For automatic tab icon centering? */
@@ -62,7 +87,7 @@
     #zen-appcontent-navbar-wrapper,
     #zen-appcontent-navbar-container,
     toolbar.browser-toolbar {
-      z-index: 23 !important;
+      z-index: 5 !important;
     }
     #navigator-toolbox {
       z-index: 0 !important;
@@ -307,6 +332,11 @@
       overflow: hidden !important;
     }
   }
+  #zen-sidebar-foot-buttons > * {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 44px !important;
+  }
 
   #navigator-toolbox:not([zen-has-hover], [has-popup-menu], [movingtab])
     #titlebar:not(
@@ -346,33 +376,6 @@
       }
     }
   }
-  }
-  #navigator-toolbox:not([zen-has-hover], [has-popup-menu], [movingtab])
-    #zen-sidebar-foot-buttons {
-      flex-direction: column !important;
-  }
-  
-  @media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.bottembuttons_display"){
-
-    #zen-sidebar-foot-buttons {
-      display: flex !important;
-      flex-direction: row !important;
-      padding-left: 0px !important;
-      margin-top: 0 !important;
-      padding-top: 0 !important;
-    }
-    #zen-sidebar-foot-buttons > * {
-      flex-grow: 1 !important;
-  }}
-  @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.bottembuttons_display") {
-    #zen-sidebar-foot-buttons {
-      align-items: start !important;
-    }
-    #zen-sidebar-foot-buttons > * {
-      margin: 0 !important;
-      padding: 0 !important;
-    }
-  }
 
   .zen-workspace-tabs-section {
     display: flex;
@@ -385,9 +388,5 @@
     overflow: hidden;
     max-width: 100%;
     box-sizing: border-box;
-  }
-  #navigator-toolbox:not([zen-has-hover], [has-popup-menu], [movingtab])
-    vbox.tab-background {
-    width: 90% !important;
   }
 }
