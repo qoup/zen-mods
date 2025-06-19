@@ -57,6 +57,11 @@
     #zen-sidebar-foot-buttons {
       align-items: start !important;
     }
+    #browser:has([zen-right-side="true"]) {
+      #zen-sidebar-foot-buttons {
+        align-items: end !important;
+      }
+    }
     @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.inverted_tabs") {
       #zen-sidebar-foot-buttons {
         align-items: end !important;
