@@ -34,6 +34,11 @@
     "label": "Change the Way Bottem buttons are displayed",
     "type": "checkbox",
     "defaultValue": false
+  },
+  {
+    "property": "theme.sidebar_expand_on_hover.show_media_controll",
+    "label": "Show Media Controll",
+    "type": "checkbox",
+    "defaultValue": true
   }
 ]
-

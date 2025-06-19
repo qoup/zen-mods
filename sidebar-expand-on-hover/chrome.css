@@ -38,6 +38,17 @@
 
 /* only use mod in collapsed toolbar mode */
 :root:has(#navigator-toolbox:not([zen-sidebar-expanded="true"])) {
+  @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.show_media_controll") {
+    #browser:has([zen-has-hover="true"]) {
+      #zen-media-controls-toolbar {
+        display: flex !important;
+        &[hidden] {
+          height: 0px !important;
+          display: none !important;
+        }
+      }
+    }
+  }
   @media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.bottembuttons_display") {
     #zen-sidebar-foot-buttons {
       display: flex !important;
