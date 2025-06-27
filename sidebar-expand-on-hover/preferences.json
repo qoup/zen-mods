@@ -40,5 +40,11 @@
     "label": "Show Media Controll",
     "type": "checkbox",
     "defaultValue": true
+  },
+  {
+    "property": "theme.sidebar_expand_on_hover.show_essentails_as_grid",
+    "label": "Show Essentails a Different Way",
+    "type": "checkbox",
+    "defaultValue": false
   }
 ]

@@ -35,9 +35,25 @@
     margin-top: calc(var(--zen-toolbar-height) + 2.2em) !important;
   }
 }
-
+@media (-moz-bool-pref: "theme.sidebar_expand_on_hover.show_essentails_as_grid") {
+  .zen-essentials-container {
+    display: none !important;
+    transition: none !important;
+  }
+}
 /* only use mod in collapsed toolbar mode */
 :root:has(#navigator-toolbox:not([zen-sidebar-expanded="true"])) {
+  @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.show_essentails_as_grid") {
+    #navigator-toolbox[zen-has-hover] {
+      .zen-essentials-container {
+        display: grid !important;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(max(23%, 48px), 1fr) minmax(max(23%, 48px), 1fr)
+        ) !important;
+      }
+    }
+  }
   @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.show_media_controll") {
     #browser:has([zen-has-hover="true"]) {
       #zen-media-controls-toolbar {
