@@ -8,3 +8,5 @@ In the directory search and open the **zen-themes.json** file and append the cop
 Save the file\
 Restart the Browser\
 Now the mod should lowkey work
+
+### I do not plan on upstreaming it for obvious reasons
