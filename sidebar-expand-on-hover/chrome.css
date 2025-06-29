@@ -140,7 +140,11 @@
       z-index: 5 !important;
     }
     #navigator-toolbox {
-      z-index: 0 !important;
+      z-index: 1 !important;
+    }
+    #tabbrowser-tab {
+      z-index: 100 !important;
+      display: block;
     }
   }
 
