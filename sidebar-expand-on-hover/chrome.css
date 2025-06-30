@@ -196,8 +196,10 @@
 
         @media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.default_tab_background_shape") {
           .tab-background {
-            width: calc(100% -2px) !important;
-            margin-left: 2px !important;
+            width: calc(100%) !important;
+            margin-left: 1px !important;
+            margin-right: 0px !important;
+            padding-right: 0px !important;
             border-radius: var(--border-radius-medium) !important;
           }
         }
