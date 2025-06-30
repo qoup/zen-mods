@@ -46,5 +46,11 @@
     "label": "Show Essentails a Different Way",
     "type": "checkbox",
     "defaultValue": false
+  },
+  {
+    "property": "theme.sidebar_expand_on_hover.close_button",
+    "label": "Set Way of displaying Close Button X",
+    "type": "checkbox",
+    "defaultValue": true
   }
 ]
