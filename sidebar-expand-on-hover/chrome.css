@@ -445,11 +445,10 @@
   }
   @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.close_button") {
     .tab-close-button {
+      width: 24px !important;
       position: relative !important;
       height: 24px !important;
-      width 24px !important;
       top: 0px !important;
-      border-radius: 0 !important;
       background: none !important;
       box-shadow: none !important;
     }
