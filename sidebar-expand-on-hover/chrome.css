@@ -50,8 +50,6 @@
   .zen-essentials-container .tabbrowser-tab {
     width: var(--zen-sidebar-width) !important;
   }
-  .zen-essentials-container .tabbrowser-tab:nth-child(var(--number)) {
-  }
 }
 /* only use mod in collapsed toolbar mode */
 :root:has(#navigator-toolbox:not([zen-sidebar-expanded="true"])) {
@@ -195,9 +193,9 @@
           margin: 2px 0 2px 0 !important;
         }
         .tab-background {
-          width: calc(100% - 4px) !important;
-          margin-left: 2px !important;
-          margin-right: 2px !important;
+          width: calc(100% - 8px) !important;
+          margin-left: 4px !important;
+          margin-right: 4px !important;
           padding-right: 0px !important;
           border-radius: var(--border-radius-medium) !important;
         }
