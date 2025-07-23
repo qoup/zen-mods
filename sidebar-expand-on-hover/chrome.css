@@ -50,23 +50,24 @@
   .zen-essentials-container .tabbrowser-tab {
     width: var(--zen-sidebar-width) !important;
   }
+  .zen-essentials-container .tab-content {
+    width: var(--zen-sidebar-width) !important;
+  }
 }
 /* only use mod in collapsed toolbar mode */
 :root:has(#navigator-toolbox:not([zen-sidebar-expanded="true"])) {
   @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.show_essentails_as_grid") {
-    #navigator-toolbox[zen-has-hover] {
+    #navigator-toolbox[zen-has-hover],
+    #navigator-toolbox[has-popup-menu] {
       .zen-essentials-container .tabbrowser-tab {
         display: unset !important;
-      }
-
-      .zen-essentials-container {
-        grid-template-columns: repeat(
-          auto-fit,
-          minmax(var(--zen-sidebar-width), 1fr)
-        ) !important;
-      }
-      .tabbrowser-tab {
         width: unset !important;
+      }
+      .zen-essentials-container .tab-content {
+        width: unset !important;
+      }
+      .zen-essentials-container .tab-background {
+        width: 100% !important;
       }
     }
   }
@@ -89,7 +90,8 @@
       padding-top: 0 !important;
       flex-direction: column !important;
     }
-    #browser:has([zen-has-hover="true"]) #zen-sidebar-foot-buttons {
+    #browser:has([zen-has-hover="true"]) #zen-sidebar-foot-buttons,
+    #navigator-toolbox[has-popup-menu] #zen-sidebar-foot-buttons {
       flex-direction: row !important;
     }
     #zen-sidebar-foot-buttons > * {
