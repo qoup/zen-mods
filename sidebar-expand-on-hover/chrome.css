@@ -424,7 +424,9 @@
       }
     }
   }
-
+  .pinned-tabs-container-separator {
+    margin: 14px auto !important;
+  }
   .zen-workspace-tabs-section {
     display: flex;
     flex-direction: column;
