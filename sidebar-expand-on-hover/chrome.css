@@ -425,7 +425,7 @@
     }
   }
   .pinned-tabs-container-separator {
-    margin: 14px auto !important;
+    margin: 12px auto !important;
   }
   .zen-workspace-tabs-section {
     display: flex;
@@ -440,13 +440,15 @@
     box-sizing: border-box;
   }
   @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.close_button") {
-    .tab-close-button {
-      width: 24px !important;
-      position: relative !important;
-      height: 24px !important;
-      top: 0px !important;
-      background: none !important;
-      box-shadow: none !important;
+    .tab-stack:hover {
+      .tab-close-button {
+        width: 24px !important;
+        position: relative !important;
+        height: 24px !important;
+        top: 0px !important;
+        background: none !important;
+        box-shadow: none !important;
+      }
     }
   }
 }
