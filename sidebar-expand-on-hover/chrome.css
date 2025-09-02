@@ -16,8 +16,8 @@
         overflow: visible !important;
 
         #zen-appcontent-navbar-container:has(
-            #nav-bar > .titlebar-buttonbox-container:last-child
-          ) {
+          #nav-bar > .titlebar-buttonbox-container:last-child
+        ) {
           margin-left: calc(0px - var(--zen-toolbox-max-width)) !important;
 
           #nav-bar-customization-target > toolbarbutton:first-child {
@@ -423,9 +423,6 @@
         margin-inline: 0 !important;
       }
     }
-  }
-  .pinned-tabs-container-separator {
-    margin: 12px auto !important;
   }
   .zen-workspace-tabs-section {
     display: flex;
