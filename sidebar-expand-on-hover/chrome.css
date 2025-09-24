@@ -82,6 +82,18 @@
       }
     }
   }
+  #tabbrowser-arrowscrollbox-periphery {
+    width: var(--zen-sidebar-width) !important;
+    justify-content: start !important;
+    align-items: flex-start !important;
+  }
+  #browser:has([zen-has-hover="true"]),
+  #navigator-toolbox[has-popup-menu] {
+    #tabbrowser-arrowscrollbox-periphery {
+      width: var(--theme-sidebar_expand_on_hover-expanded_width) !important;
+      justify-content: start !important;
+    }
+  }
   @media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.bottembuttons_display") {
     #zen-sidebar-foot-buttons {
       display: flex !important;
