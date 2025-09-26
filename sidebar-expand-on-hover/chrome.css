@@ -82,16 +82,21 @@
       }
     }
   }
+  #tabs-newtab-button .toolbarbutton-text {
+    display: none !important;
+  }
+  #tabs-newtab-button {
+    width: 80% !important;
+    margin-left: 4px !important;
+    margin-right: 4px !important;
+  }
   #tabbrowser-arrowscrollbox-periphery {
-    width: var(--zen-sidebar-width) !important;
-    justify-content: start !important;
-    align-items: flex-start !important;
+    width: 100% !important;
   }
   #browser:has([zen-has-hover="true"]),
   #navigator-toolbox[has-popup-menu] {
-    #tabbrowser-arrowscrollbox-periphery {
-      width: var(--theme-sidebar_expand_on_hover-expanded_width) !important;
-      justify-content: start !important;
+    #tabs-newtab-button .toolbarbutton-text {
+      display: flex !important;
     }
   }
   @media not (-moz-bool-pref: "theme.sidebar_expand_on_hover.bottembuttons_display") {
@@ -325,7 +330,6 @@
       }
 
       .toolbarbutton-text {
-        display: flex !important;
         background: transparent !important;
         padding: 0 !important;
       }
