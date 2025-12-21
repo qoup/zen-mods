@@ -6,4 +6,4 @@
 4. open them and delete all content.
 5. Copy the contents from [preferences.json](https://github.com/qoup/zen-mods/blob/main/sidebar-expand-on-hover/preferences.json) and [chrome.css](https://github.com/qoup/zen-mods/blob/main/sidebar-expand-on-hover/chrome.css)
 6. and paste them into the respective file.
-7. Then restart the browser or restart the plugin by disabling and enabling it again in about:preferences#zenMarketplaceopy this:
+7. Then restart the browser or restart the plugin by disabling and enabling it again in about:preferences#zenMarketplace

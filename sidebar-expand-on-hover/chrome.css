@@ -93,7 +93,10 @@
   #tabbrowser-arrowscrollbox-periphery {
     width: 100% !important;
   }
-  #browser:has([zen-has-hover="true"]),
+  #titlebar:hover,
+  #titlebar:has(toolbarbutton[open="true"]:not(#zen-sidepanel-button)),
+  #navigator-toolbox[zen-has-hover="true"],
+  #navigator-toolbox[zen-compact-mode-active],
   #navigator-toolbox[has-popup-menu] {
     #tabs-newtab-button .toolbarbutton-text {
       display: flex !important;
@@ -107,9 +110,12 @@
       padding-top: 0 !important;
       flex-direction: column !important;
     }
-    #browser:has([zen-has-hover="true"]) #zen-sidebar-foot-buttons,
-    #navigator-toolbox[has-popup-menu] #zen-sidebar-foot-buttons {
-      flex-direction: row !important;
+    #navigator-toolbox[zen-compact-mode-active],
+    #browser:has([zen-has-hover="true"]),
+    #navigator-toolbox[has-popup-menu] {
+      #zen-sidebar-foot-buttons {
+        flex-direction: row !important;
+      }
     }
     #zen-sidebar-foot-buttons > * {
       flex-grow: 1 !important;
