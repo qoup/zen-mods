@@ -210,6 +210,7 @@
 
         .tab-label-container {
           display: flex !important;
+          margin-left: 1rem;
         }
 
         .tab-content {
@@ -329,6 +330,7 @@
       gap: var(--tab-inline-padding) !important;
 
       .toolbarbutton-icon {
+        margin-left: 1rem;
         background: transparent !important;
         padding: 0 !important;
         height: 16px !important;
@@ -338,6 +340,7 @@
       .toolbarbutton-text {
         background: transparent !important;
         padding: 0 !important;
+        margin-left: 1rem !important;
       }
 
       .toolbarbutton-text:before {
